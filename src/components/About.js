@@ -1,25 +1,61 @@
+import "./About.css";
+import {
+  FaMapMarkerAlt,
+  FaLanguage,
+  FaBirthdayCake,
+  FaLightbulb,
+  FaChartLine,
+  FaUsers
+} from 'react-icons/fa';
+
 const About = () => (
-    <div className="section fade-in">
-      <h1>About Me</h1>
-      <p>As a final-year CSE student, I'm focused on leveraging my knowledge and skills to make significant contributions in the field of advanced technologies.</p>
-      <p><strong>Date of Birth:</strong> 22/03/2003</p>
-      <p><strong>Communication Languages:</strong> English, Kannada</p>
-      <p>📍 Bangalore, India</p>
-      <h2>Why Me?</h2>
-      <p>💡 <strong>Creative Thinking:</strong> I combine creativity and analytical thinking to enhance projects and bring value to your company.</p>
-      <p>📈 <strong> Staying Updated:</strong> I keep up with the latest tech trends and enjoy exploring cutting-edge solutions </p>
-      <p>🌐 <strong> Team Player:</strong> I believe that teamwork makes "dream work" and enjoy working with diverse talents and perspectives</p>
-      <h2>Education</h2>
-      <p><strong>Jyothy Institute of Technology, Bangalore (2021 - 2025)</strong><br/>Computer Science and Engineering<br/>GPA: 7.5</p>
-      <p><strong>Deeksha College (2019 - 2021)</strong><br/>Computer Science<br/>Percentage: 70</p>
-      <h2>Extracurricular Activities</h2>
-      <p>🏆 Participated in a National-Level Hackathon organized by NSS in Mysore</p>
-      <p>🎮 Participated in an intercollegiate-level Gameathon and Marathon</p>
-      <p>🎭 Actively participated in Cultural events</p>
-      <p>🏏 Represented my college as a Cricket player in University-Level Tournaments</p>
-      <p>💻 Participated in International Programmer’s Day and a Project Exhibition</p>    
-      <p>🤝 Volunteered for college-level events such as Hackathons, Gameathons, & other events</p>
+  <section className="about-section">
+    <h1 className="section-title">About Me</h1>
+
+    <div className="about-card">
+      <p className="intro-text">
+        I'm a final-year CSE student passionate about cutting-edge technologies and problem-solving.
+      </p>
+      <div className="about-details">
+        <p><FaBirthdayCake className="about-icon" /> <strong>Date of Birth:</strong> 22/03/2003</p>
+        <p><FaLanguage className="about-icon" /> <strong>Languages:</strong> English, Kannada</p>
+        <p><FaMapMarkerAlt className="about-icon" /> <strong>Location:</strong> Bangalore, India</p>
+      </div>
     </div>
-  );
-  export default About;
-  
+
+    <div className="about-card">
+      <h2 className="card-title">Why Me?</h2>
+      <p><FaLightbulb className="about-icon" /> <strong>Creative Thinking:</strong> Solving problems with a blend of creativity and logic.</p>
+      <p><FaChartLine className="about-icon" /> <strong>Tech-Savvy:</strong> Continuously learning and adapting to new technologies.</p>
+      <p><FaUsers className="about-icon" /> <strong>Team Player:</strong> Collaborative and communicative in diverse teams.</p>
+    </div>
+
+    <div className="about-card">
+      <h2 className="card-title">Education</h2>
+      <div className="timeline">
+        <div className="timeline-entry">
+          <h3>Jyothy Institute of Technology</h3>
+          <p>B.E in Computer Science (2021 - 2025) — GPA: 7.5</p>
+        </div>
+        <div className="timeline-entry">
+          <h3>Deeksha College</h3>
+          <p>PUC - Computer Science (2019 - 2021) — 70%</p>
+        </div>
+      </div>
+    </div>
+
+    <div className="about-card">
+      <h2 className="card-title">Extracurricular Activities</h2>
+      <ul className="activities">
+        <li>🏆 National-Level Hackathon (Mysore)</li>
+        <li>🎮 Gameathon & Marathon Participation</li>
+        <li>🎭 Cultural Events</li>
+        <li>🏏 College Cricket Team</li>
+        <li>💻 Project Exhibition & Programmer’s Day</li>
+        <li>🤝 Volunteering in Hackathons & Events</li>
+      </ul>
+    </div>
+  </section>
+);
+
+export default About;

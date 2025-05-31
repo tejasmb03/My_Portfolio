@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
 import "./Contact.css";
+
+// Replace with your actual bot token and chat ID
+const TELEGRAM_BOT_TOKEN = "7285444331:AAGjcCemHQzSr_HSr_iuOt_5tmIjbFhVujo";
+const TELEGRAM_CHAT_ID = "921645787";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,69 +12,85 @@ const Contact = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    emailjs
-      .send(
-        "service_ozhc9sg", // Replace with your Email.js Service ID
-        "template_08m3grz", // Replace with your Email.js Template ID
+    const message = `
+<b>New Contact Form Submission</b>
+<b>Name:</b> ${formData.name}
+<b>Email:</b> ${formData.email}
+<b>Message:</b> ${formData.message}
+    `;
+
+    try {
+      const response = await fetch(
+        `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
         {
-          user_name: formData.name,
-          user_email: formData.email,
-          message: formData.message,
-        },
-        "ODOIWFdV5flJzCclN" // Replace with your Email.js Public Key
-      )
-      .then(
-        (response) => {
-          console.log("Email sent!", response.status, response.text);
-          alert("Message Sent! I will get back to you soon.");
-          setFormData({ name: "", email: "", message: "" }); // Reset form
-        },
-        (err) => {
-          console.error("Error sending email:", err);
-          alert("Failed to send message. Please try again.");
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: message,
+            parse_mode: "HTML",
+          }),
         }
       );
+
+      if (response.ok) {
+        alert("Message sent! I'll get back to you soon.");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      alert("Error sending message. Please try again.");
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <>
-      <div className="contact-container">
-        <h1 className="contact-title">Connect with Me</h1>
-        <form onSubmit={handleSubmit} className="contact-form">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="What are you looking for?"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-          <button type="submit" className="send-btn">Send</button>
-        </form>
-      </div>
-    </>
+    <div className="contact-container">
+      <h1 className="contact-title">Contact Me</h1>
+      <form onSubmit={handleSubmit} className="contact-form">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit" className="send-btn" disabled={loading}>
+          {loading ? "Sending..." : "Send"}
+        </button>
+      </form>
+    </div>
   );
 };
 

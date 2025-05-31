@@ -1,0 +1,147 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  background: linear-gradient(135deg, #f0f4ff 0%, #ffe6f7 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.about-section {
+  max-width: 760px;
+  margin: 60px auto;
+  padding: 0 14px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #f0f4ff 0%, #ffe6f7 100%);
+  border-radius: 34px;
+  box-shadow: 0 8px 32px rgba(60, 80, 120, 0.08);
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #000 !important;
+  margin-bottom: 10px;
+  position: relative;
+  padding-bottom: 16px;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 1px;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  height: 4px;
+  width: 80px;
+  background: linear-gradient(90deg, #3b82f6, #a78bfa);
+  border-radius: 4px;
+}
+
+.about-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(30, 41, 59, 0.09);
+  padding: 36px 28px;
+  margin-bottom: 20px;
+  text-align: left;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0;
+  transform: translateY(40px);
+  animation-fill-mode: forwards;
+}
+
+/* Staggered animations */
+.about-card:nth-child(2) { animation-delay: 0.2s; }
+.about-card:nth-child(3) { animation-delay: 0.4s; }
+.about-card:nth-child(4) { animation-delay: 0.6s; }
+.about-card:nth-child(5) { animation-delay: 0.8s; }
+
+/* Remove default top margin from all h2 (including .card-title) */
+h2, .card-title {
+  margin-top: 0 !important; /* This is the key change */
+}
+
+/* Optionally, reduce top padding for "Why Me?" card only if needed
+   (Assuming it's the 2nd .about-card) */
+.about-card:nth-child(3) {
+  padding-top: 18px; /* Reduce from 36px to 18px */
+}
+
+/* You can also add a small space above .card-title if you want some gap */
+.card-title {
+  font-size: 1.5rem;
+  color: #2563eb;
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  /* margin-top: 0 !important; already set above */
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 32px;
+  color: #334155;
+  font-weight: 500;
+}
+
+.about-details p,
+.about-card p {
+  font-size: 1.03rem;
+  color: #334155;
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+.about-icon {
+  color: #3b82f6;
+  margin-right: 10px;
+  vertical-align: middle;
+  font-size: 1.2rem;
+}
+
+.activities {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.activities li {
+  font-size: 1.01rem;
+  color: #334155;
+  margin-bottom: 12px;
+  padding-left: 1px;
+  transition: color 0.2s;
+}
+
+.activities li:hover {
+  color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.7rem;
+    padding-bottom: 10px;
+  }
+  .about-card {
+    padding: 22px 12px;
+  }
+  .about-card:nth-child(3) {
+    padding-top: 10px;
+  }
+}
