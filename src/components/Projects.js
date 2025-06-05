@@ -37,6 +37,14 @@ const projects = [
     github: "https://github.com/tejasmb03/guess_the_number.git",
 
   },
+   {
+    id: 5,
+    title: "Weather App",
+    description:
+      "A React-based weather application that displays real-time weather conditions including temperature, feels-like temperature, cloud status, humidity, and min/max temperature. It fetches live data from a weather API and dynamically shows localized weather details like broken clouds and humidity for any searched city.",
+    image: "/weather.png",
+    liveDemo: "https://tejas2003.netlify.app/",
+  },
 ];
 
 const Projects = () => (
