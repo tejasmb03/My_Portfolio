@@ -51,6 +51,12 @@ const Skills = () => {
           <p>
             Developed a smart healthcare portal using deep learning to detect brain disorders such as Alzheimer's, stroke, and tumors from MRI/CT scans. The system integrates MobileNetV2 for real-time diagnosis and InceptionV3 for high-precision detection. It features a Flask-based web interface enabling patient registration, scan upload, and result visualization.
           </p>
+          </div>
+          <div className="pub-card animate-fade-in" style={{ animationDelay: "0.15s" }}>
+          <h3>FusionNet-RS: A Deep Feature Fusion Model for Remote Sensing Image Classification on PatternNet 
+          (Accepted in IEEE)</h3>
+          <p>Acknowledged for contributions to a research project on remote sensing image classification using a feature 
+          fusion model combining MobileNet and DenseNet121, achieving 95.98% accuracy on the PatternNet dataset. </p>
         </div>
       </div>
 

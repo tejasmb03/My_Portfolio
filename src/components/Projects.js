@@ -27,6 +27,16 @@ const projects = [
     image: "/brain.png",
     github: "https://github.com/tejasmb03/Multi-Brain-Disease-Detection-.git",
   },
+  {
+    id: 4,
+    title: "Guess the Number",
+    description:
+      "A Flask-based Guess the Number web application where users have limited chances to guess a randomly generated number based on difficulty level. It features dynamic hints, session-based score tracking, and a responsive frontend interface.",
+    image: "/game.png",
+    liveDemo: "https://guess-the-number-ealt.onrender.com/",
+    github: "https://github.com/tejasmb03/guess_the_number.git",
+
+  },
 ];
 
 const Projects = () => (

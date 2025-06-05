@@ -35,7 +35,7 @@ const About = () => (
       <div className="timeline">
         <div className="timeline-entry">
           <h3>Jyothy Institute of Technology</h3>
-          <p>B.E in Computer Science (2021 - 2025) — GPA: 7.5</p>
+          <p>B.E in Computer Science (2021 - 2025) — GPA: 8</p>
         </div>
         <div className="timeline-entry">
           <h3>Deeksha College</h3>
