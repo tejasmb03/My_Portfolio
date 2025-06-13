@@ -41,7 +41,7 @@ const Skills = () => {
             <br></br>(Accepted in IEEE)
           </h3>
           <p>
-            Worked on deep learning-based remote sensing image classification using a hybrid model called FusionNetRS. Combined MobileNet and DenseNet121 through feature fusion to improve both accuracy and efficiency on the PatternNet dataset. Achieved a mean classification accuracy of 95.98% using five-fold cross-validation.
+            Developed a deep learning-based hybrid model combining MobileNet and DenseNet121 for high-accuracy land-use classification using aerial imagery. Implemented feature fusion and linear SVM with SMOTE balancing, achieving 96.57% accuracy on the UC Merced dataset. Validated model performance with stratified 5-fold cross-validation, optimizing for both accuracy and computational efficiency.
           </p>
         </div>
         <div className="pub-card animate-fade-in" style={{ animationDelay: "0.15s" }}>
@@ -55,8 +55,9 @@ const Skills = () => {
           <div className="pub-card animate-fade-in" style={{ animationDelay: "0.15s" }}>
           <h3>FusionNet-RS: A Deep Feature Fusion Model for Remote Sensing Image Classification on PatternNet 
           (Accepted in IEEE)</h3>
-          <p>Acknowledged for contributions to a research project on remote sensing image classification using a feature 
-          fusion model combining MobileNet and DenseNet121, achieving 95.98% accuracy on the PatternNet dataset. </p>
+          <p>
+            Acknowledged for contributing to a deep learning research project involving a hybrid CNN model (MobileNet + DenseNet121) for classifying remote sensing images. Supported the development and evaluation of the FusionNet-RS model, which achieved 95.98% accuracy on the PatternNet dataset using five-fold cross-validation. Assisted in optimizing preprocessing and feature fusion techniques for robust and efficient land-use classification.
+          </p>
         </div>
       </div>
 
