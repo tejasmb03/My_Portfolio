@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -14,20 +13,17 @@ function App() {
   return (
     <>
       <div className="app">
-        <Router>
-          <div className="container fade-in">
-            {/* Pass the correct logo path */}
-            <Navbar logoPath="/logo-name.jpg" />  
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/experience" element={<Experience />} />
-              <Route path="/skills" element={<Skills />} />
-            </Routes>
-          </div>
-        </Router>
+        <div className="container fade-in">
+          <Navbar logoPath="/logo-name.jpg" />
+
+          {/* Scrollable Sections with IDs */}
+          <section id="home" className="section"><Home /></section>
+          <section id="about" className="section"><About /></section>
+          <section id="projects" className="section"><Projects /></section>
+          <section id="experience" className="section"><Experience /></section>
+          <section id="skills" className="section"><Skills /></section>
+          <section id="contact" className="section"><Contact /></section>
+        </div>
       </div>
       <Footer />
     </>
@@ -35,4 +31,3 @@ function App() {
 }
 
 export default App;
-
