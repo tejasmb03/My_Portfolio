@@ -54,6 +54,15 @@ const projects = [
     image: "/weather.png",
     liveDemo: "https://tejas2003.netlify.app/",
   },
+    {
+    id: 7,
+    title: "My-Wander-App",
+    description:
+      "Wander App is a full-stack travel and lifestyle planner where users can save places, restaurants, to-dos, and reminders. It uses React.js (Netlify) for the frontend and Flask (Render) for the backend with SQLite storage.",
+    image: "/wander.png",
+    liveDemo: "https://6875e43e0f821adf242aff42--mywanderlistss.netlify.app/login",
+    github: "https://github.com/tejasmb03/wanderlist.git",
+  },
   
 ];
 
